@@ -53,7 +53,8 @@
       features: ['Порядок в «Загрузках»', 'Предложения по папкам', 'Только после подтверждения'],
       url: 'https://prism.net.ru/projects/prism-tidy/',
       downloads: {
-        macOS: 'https://prism.net.ru/projects/prism-tidy/downloads/Prism-Tidy-macOS-2.0.zip'
+        macOS: 'https://prism.net.ru/projects/prism-tidy/downloads/Prism-Tidy-macOS-2.0.zip',
+        Windows: 'https://prism.net.ru/projects/prism-tidy/downloads/Prism-Tidy-Windows-2.0.zip'
       }
     }
   };
