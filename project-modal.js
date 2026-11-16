@@ -43,6 +43,18 @@
         macOS: 'https://prism.net.ru/projects/prism-renew/downloads/Prism-Renew-macOS-1.1.zip',
         Windows: 'https://prism.net.ru/projects/prism-renew/downloads/Prism-Renew-Windows-1.1.zip'
       }
+    },
+    tidy: {
+      index: '04',
+      kind: 'ФАЙЛЫ',
+      status: 'Beta',
+      title: 'Prism Tidy',
+      description: 'Разложите завалы файлов по папкам. Prism Tidy предлагает план и ждёт подтверждения — ничего не удаляется автоматически.',
+      features: ['Порядок в «Загрузках»', 'Предложения по папкам', 'Только после подтверждения'],
+      url: 'https://prism.net.ru/projects/prism-tidy/',
+      downloads: {
+        macOS: 'https://prism.net.ru/projects/prism-tidy/downloads/Prism-Tidy-macOS-2.0.zip'
+      }
     }
   };
 
@@ -135,6 +147,10 @@
     siteLink.href = project.url;
     siteLink.setAttribute('aria-label', 'Открыть сайт проекта ' + project.title);
     var hasDownloads = Boolean(project.downloads);
+    Array.prototype.forEach.call(menu.querySelectorAll('[data-platform]'), function (choice) {
+      var platform = choice.getAttribute('data-platform');
+      choice.hidden = !project.downloads || !project.downloads[platform];
+    });
     if (downloadBlock) downloadBlock.hidden = !hasDownloads;
     demoButton.disabled = !hasDownloads;
     demoButton.setAttribute('aria-expanded', 'false');
